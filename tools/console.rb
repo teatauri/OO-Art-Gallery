@@ -1,50 +1,47 @@
 require_relative '../config/environment.rb'
 require 'pp'
 
-# artist init
+# gallery init 
 
-dave = Artist.new("Dave", 13)
-alan = Artist.new("Alan", 5)
-partridge = Artist.new("Partridge", 18)
-clare = Artist.new("Clare", 14)
+g1 = Gallery.new("Gallery_1", "London")
+g2 = Gallery.new("Gallery_2", "Belfast")
+g3 = Gallery.new("Gallery_3", "Toronto") 
 
-# gallery init
+# artist init 
 
-g1 = Gallery.new("Gallery1", "Belfast")
-g2 = Gallery.new("Gallery2", "London")
-g3 = Gallery.new("Gallery3", "Leicester")
-g4 = Gallery.new("Gallery4", "Toronto")
+a1 = Artist.new("artist_1", 1)
+a2 = Artist.new("artist_2", 2)
 
-# painting init
+#painting init 
 
-p1 = Painting.new("Moon", 100, dave, g1)
-p2 = Painting.new("Sun", 200, alan, g2)
-p3 = Painting.new("Pigeon", 300, partridge, g3)
-p4 = Painting.new("Salami", 400, clare, g4)
-p5 = Painting.new("Bread", 500, clare, g3)
+p1 = Painting.new("Moon", 10, a1, g1)
+p2 = Painting.new("Sun", 20, a1, g2)
+p3 = Painting.new("Earth", 30, a2, g3)
 
 
-# artist
+
+# artist 
 Artist.all
-clare.paintings
-clare.galleries
-clare.cities
-Artist.total_experience
-# Artist.most_prolific
-clare.create_painting("New", 600, g1)
+a1.paintings
+a1.galleries
+a1.cities
+Artist.total_experience 
+pp Artist.most_prolific
+a1.create_painting("Stars", 40, g2)
 
 
-# painting
-Painting.all
+# painting 
+Painting.all 
 Painting.total_price
 
-
-# gallery
+# gallery 
 Gallery.all
 g3.paintings
 g3.artists
 g3.artist_names
-g3.most_expensive_painting
+g2.most_expensive_painting
+
+
 
 
 
